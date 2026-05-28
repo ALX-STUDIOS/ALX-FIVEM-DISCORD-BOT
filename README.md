@@ -64,36 +64,6 @@ You also need a **Discord application/bot** and a channel the bot can read.
 
 ---
 
-## Configuration
-
-All settings live in `shared/config.lua`. Key fields:
-
-```lua
-Config.discord = {
-    token         = 'YOUR_BOT_TOKEN',        -- Bot token (Bot, not client secret)
-    guildId       = 'YOUR_GUILD_ID',         -- Needed for role checks
-    channelId     = 'YOUR_CHANNEL_ID',       -- Channel the bot listens to
-    webhookUrl    = 'https://discord.com/api/webhooks/...',  -- Command replies
-    screenshotUrl = 'https://discord.com/api/webhooks/...',  -- Screenshots
-    prefix        = '!',                      -- Command prefix
-    pollInterval  = 5000,                     -- How often to poll Discord (ms)
-}
-```
-
-Other useful sections:
-
-- **`Config.allowedRoles`** — Discord role IDs allowed to use commands by default. Leave empty to allow any non-bot user in the channel (**not recommended**).
-- **`Config.commandRoles`** — per-command role overrides (e.g. lock `kick` to a specific role). Falls back to `allowedRoles`.
-- **`Config.commands`** — toggle individual commands on/off.
-- **`Config.framework`** — pin or auto-detect `inventory` and `skin` systems; override ESX method names for exotic forks; set DB columns for legacy inventory reads.
-- **`Config.triggers`** — event names for revive / notify / announce, so you can match your server's resources.
-- **`Config.embedColors`** — colors for success / info / error embeds.
-- **`Config.debug`** — verbose console logging (errors always print).
-
-> ⚠️ **Never commit your real token or webhook URLs.** The values shipped in `config.lua` are placeholders.
-
----
-
 ## Commands
 
 Default prefix is `!`. `<id>` is the in-game **server ID** of the target player.
